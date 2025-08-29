@@ -23,6 +23,8 @@ from books.views import logout_view
 
 
 urlpatterns = [
+    
+    path('', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('admin/', admin.site.urls),
     path('books/', include('books.urls')),
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
